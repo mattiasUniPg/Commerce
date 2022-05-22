@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ProdottiViewModel>
+
+@{
+    ViewBag.Title = "Prodotti Index";
+}
+
+<h1 class="display-4">Lista Prodotti</h1>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IDC8)</th>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+        <th>@Html.DisplayNameFor(model => model.Url)</th>
+         <th>@Html.DisplayNameFor(model => model.Disponibilita)</th>
+         <th>@Html.DisplayNameFor(model => model.Valuta)</th>
+        <th>@Html.DisplayNameFor(model => model.Prezzo)</th>
+         <th>@Html.DisplayNameFor(model => model.Paese)</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var prodotto in Model)
+        {
+            <tr>
+                <td>@prodotto.IDC8</td>
+                <td>@prodotto.Title</td>
+                <td>@prodotto.Description</td>
+                <td>@prodotto.Url</td>
+                <td>@prodotto.Paese</td>
+                <td>@prodotto.Valuta</td>
+                <td>@prodotto.Prezzo</td>
+                <td>@prodotto.Disponibilita</td>
+                <td>
+                    @Html.ActionLink("Acquista","AcquistaProdotti",new {IDC8 = prodotto.IDC8})|
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5" class="text-center"> Nessun prodotto disponibile</td>
+        </tr>
+    }
+
+    <p class="text-right">@Html.ActionLink("Torna pagina iniziale","Index") </p>
+</table>

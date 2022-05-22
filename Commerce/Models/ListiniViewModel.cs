@@ -1,6 +1,6 @@
 ﻿namespace Commerce.Models
 {
-    public class Listini
+    public class ListiniViewModel
     {
         int IdListini { get; set; }
         float Prezzo { get; set; }

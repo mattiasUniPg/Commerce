@@ -1,0 +1,41 @@
+﻿@model OrdiniViewModel;
+
+@{
+    ViewBag.Title = "Ordini registrati";
+}
+
+@if (ViewBag.Message != null)
+{
+    <div roll="alert" class="alert alert-success">
+        @ViewBag.Message
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-horizontal">
+        <div>Visualizza Ordini:</div>
+        <hr>
+       
+        <table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IdOrdine)</th>
+        <th>@Html.DisplayNameFor(model => model.Importo)</th>
+        <th>@Html.DisplayNameFor(model => model.Data)</th>
+        <th>@Html.DisplayNameFor(model => model.CodC8)</th>
+         <th>@Html.DisplayNameFor(model => model.CodCliente)</th>
+        <th>@Html.DisplayNameFor(model => model.Valuta)</th>
+        
+    </tr>
+    <tr>
+        <th></th>
+    </tr>
+
+        </table>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Indietro","Index")
+</div>

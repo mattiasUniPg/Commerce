@@ -1,9 +1,9 @@
 ﻿namespace Commerce.Models
 {
-    public class Ordini
+    public class OrdiniViewModel
     {
         int IdOrdine { get; set; }
-        float Importo { get; set; }
+        decimal Importo { get; set; }
         DateTime Data { get; set; }
         string Valuta { get; set; }
         string CodC8 { get; set; }

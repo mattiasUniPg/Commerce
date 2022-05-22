@@ -1,3 +1,5 @@
+
+var retriver =new Retriver();
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

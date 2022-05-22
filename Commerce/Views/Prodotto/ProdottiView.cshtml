@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Commerce.Models.Prodotti>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+     <title>ECOCOMMERCE</title>
+     <script src="Get.js"></script>
+</head>
+<body>
+    <div class="StyleProdView">
+        <h1>Prodotti</h1>
+        <p>Today is @DateTime.Today @DateTime.Now</p>
+        
+    </div>
+    <div class="ProdottiProd">
+        <img src="https://th.bing.com/th/id/OIP.Jc92d0pCmjBa7sAmLRh4kgHaEM?w=299&h=180&c=7&r=0&o=5&dpr=1.25&pid=1.7"
+        alt="PS5"/>
+        <div><img src=""</div>
+        <div><h4>Codice(C8): </h4></div>
+        <div><h4>Titolo: </h4></div>
+        <div><h4>Prezzo: </h4></div>
+        <div><h4>Descrizione: </h4></div>
+        <div><h4>Disponibilità: </h4></div>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDC8)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Prodotti) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDC8)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDC8 }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDC8  }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.IDC8 })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+</body>
+</html> 
+
+
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}

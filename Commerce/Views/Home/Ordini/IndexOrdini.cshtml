@@ -1,0 +1,43 @@
+﻿@model IEnumerable<OrdiniViewModel>
+
+@{
+    ViewBag.Title = "Ordini Index";
+}
+
+<h1 class="display-4">Lista Ordini</h1>
+
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.IdOrdine)</th>
+        <th>@Html.DisplayNameFor(model => model.Importo)</th>
+        <th>@Html.DisplayNameFor(model => model.Data)</th>
+        <th>@Html.DisplayNameFor(model => model.Valuta)</th>
+         <th>@Html.DisplayNameFor(model => model.CodC8)</th>
+        <th>@Html.DisplayNameFor(model => model.CodCliente)</th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        foreach (var ordine in Model)
+        {
+            <tr>
+                <td>@ordine.IdOrdine</td>
+                <td>@ordine.Importo</td>
+                <td>@ordine.Data</td>
+                <td>@ordine.Valuta</td>
+                <td>@ordine.CodC8</td>
+                <td>@ordine.CodCliente</td>
+                <td>
+                    @Html.ActionLink("Visualizza","VisualizzaOrdini",new {IdOrdine = ordine.IdOrdine})|
+                </td>
+            </tr>
+        }
+    }
+    else
+    {
+        <tr>
+            <td colspan="5" class="text-center"> Nessun ordine disponibile</td>
+        </tr>
+    }
+
+    <p class="text-right">@Html.ActionLink("Torna pagina iniziale","Index") </p>
+</table>

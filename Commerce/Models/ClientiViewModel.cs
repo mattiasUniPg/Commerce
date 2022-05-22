@@ -1,6 +1,6 @@
 ﻿namespace Commerce.Models
 {
-    public class Clienti
+    public class ClientiViewModel
     {
         int IdCliente { get; set;}
         string Nome { get; set;}
